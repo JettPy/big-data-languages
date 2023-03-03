@@ -2,12 +2,10 @@ package lab2;
 
 import java.util.Scanner;
 
-enum Direction {
-    UP,
-    DOWN,
-    LEFT,
-    RIGHT
-}
+// Лабораторная работа 2
+// Вариант 2
+// Задание 2
+enum Direction { UP, DOWN, LEFT, RIGHT }
 
 public class CyclicShift {
 
@@ -61,7 +59,6 @@ public class CyclicShift {
                 }
             }
         }
-
     }
 
     public static void main(String[] args) {
