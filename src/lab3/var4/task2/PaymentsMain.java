@@ -1,5 +1,8 @@
 package lab3.var4.task2;
 
+// Лабораторная работа 3
+// Вариант 4
+// Задание 2
 public class PaymentsMain {
     public static void main(String[] args) {
         Account a1 = new Account("12345678900987654321", 600);

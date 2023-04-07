@@ -1,5 +1,8 @@
 package lab3.var4.task1;
 
+// Лабораторная работа 3
+// Вариант 4
+// Задание 1
 public class ElectiveMain {
     public static void main(String[] args) {
         Teacher t1 = new Teacher("Ivanov S.V.");

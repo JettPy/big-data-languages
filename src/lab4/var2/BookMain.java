@@ -1,5 +1,8 @@
 package lab4.var2;
 
+// Лабораторная работа 4
+// Вариант 2
+// Задание 1
 public class BookMain {
     public static void main(String[] args) {
         Encyclopedia a = new Encyclopedia(

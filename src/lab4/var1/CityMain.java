@@ -2,6 +2,9 @@ package lab4.var1;
 
 import java.util.ArrayList;
 
+// Лабораторная работа 4
+// Вариант 1
+// Задание 1
 public class CityMain {
     public static void main(String[] args) {
         City city = new City("Одинцово");
