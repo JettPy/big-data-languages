@@ -27,18 +27,18 @@ public class ShopSystem {
             for (int i = 0; i < 10; i++) {
                 try {
                     long secs = (long)(Math.random() * 3) + 1;
-                    Thread.sleep(1000 * secs);
+                    Thread.sleep(500 * secs);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
                 probability = Math.random();
                 if (probability > 0.5) {
                     int product_id = (int)(Math.random() * 90) + 10;
-                    System.out.println(this.name + ": Отправлен товар с id: " + product_id);
+                    System.out.printf("%10s: Отправлен товар с id: %d\n", this.name, product_id);
                     store.add(product_id);
                 }
             }
-            System.out.println(this.name + ": Конец отправки");
+            System.out.printf("%10s: Конец отправки\n", this.name);
             store.add(-1);
         }
     }
@@ -65,15 +65,15 @@ public class ShopSystem {
                     }
                     try {
                         long secs = (long)(Math.random() * 3) + 1;
-                        Thread.sleep(1000 * secs);
+                        Thread.sleep(500 * secs);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-                    System.out.println(this.name + ": Получен товар с id: " + product_id);
+                    System.out.printf("%10s: Получен товар с id: %d\n", this.name, product_id);
                     shelving.add(product_id);
                 }
             }
-            System.out.println(this.name + ": Магазин закрывается");
+            System.out.printf("%10s: Магазин закрывается\n", this.name);
             shelving.add(-1);
         }
     }
@@ -86,11 +86,15 @@ public class ShopSystem {
 
         @Override
         public void run() {
+            boolean waiting = true;
             while (true) {
                 if (shelving.isEmpty()) {
                     try {
-                        Thread.sleep(1000);
-                        System.out.println(this.name + ": Ждет товар");
+                        Thread.sleep(500);
+                        if (waiting) {
+                            System.out.printf("%10s: Ждет товар\n", this.name);
+                            waiting = false;
+                        }
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
@@ -101,14 +105,15 @@ public class ShopSystem {
                     }
                     try {
                         long secs = (long)(Math.random() * 3) + 1;
-                        Thread.sleep(1000 * secs);
+                        Thread.sleep(500 * secs);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-                    System.out.println(this.name + ": Купил товар с id: " + product_id);
+                    System.out.printf("%10s: Купил товар с id: %d\n", this.name, product_id);
+                    waiting = true;
                 }
             }
-            System.out.println(this.name + ": Клиент ушел");
+            System.out.printf("%10s: Клиент ушел\n", this.name);
         }
     }
 

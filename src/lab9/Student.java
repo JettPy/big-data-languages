@@ -2,6 +2,7 @@ package lab9;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.stream.Stream;
 
 // Лабораторная работа 9
 // Вариант 1
@@ -21,8 +22,8 @@ public class Student {
                 new Student("Petr", 60),
                 new Student("Olga", 70)
         );
-        double avg_score = students.stream().reduce((student, all_scores) ->
-                new Student("", all_scores.score + student.score)).get().score * 1.0 / students.size();
+        double avg_score =
+                students.stream().map(student -> student.score).reduce(Integer::sum).get() * 1.0 / students.size();
         System.out.println("Средний балл: " + avg_score);
     }
 }
