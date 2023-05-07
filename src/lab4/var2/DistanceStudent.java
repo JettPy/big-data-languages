@@ -9,5 +9,4 @@ public class DistanceStudent extends Student {
     public void sayHi() {
         System.out.println("Студент " + name + ", " + age + " лет. На заочном обучении");
     }
-
 }

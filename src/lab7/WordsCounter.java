@@ -11,8 +11,8 @@ public class WordsCounter {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите текст:");
-//        String initial_text = scanner.nextLine();
-        String initial_text = "Идем молод долом меди меди тот";
+        String initial_text = scanner.nextLine();
+//        String initial_text = "Идем молод долом меди меди тот";
         String[] text = initial_text.replaceAll("[/.,\"():]", "").toLowerCase().trim().split("\\s+");
         Map<String, Integer> words = new HashMap<>();
         for (String word: text) {
